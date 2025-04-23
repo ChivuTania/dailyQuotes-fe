@@ -1,0 +1,33 @@
+.aura-background {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: radial-gradient(
+      circle,
+      #FD7055 0%,
+      #E647C7 50%,
+      #8D62FD 100%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+  }
+  
+  p {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+
+
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+  
+
+
+
+  
+  
+  
