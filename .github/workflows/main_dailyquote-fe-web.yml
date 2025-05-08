@@ -32,7 +32,7 @@ jobs:
         uses: TheDoctor0/zip-release@0.7.6
         with:
           filename: release.zip
-          path: ./dailyquotes-fe/dist/dailyquotes-fe/*
+          path: ./daily-quotes-fe/dist/daily-quotes-fe/*
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
