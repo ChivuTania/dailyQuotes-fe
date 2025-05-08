@@ -8,20 +8,20 @@ import { Quote } from '../models/quote';
 })
 export class QuoteService {
 
-  private RECIPE_URL = "http://localhost:8080/quotes"
+  private QUOTE_URL = "https://dailyquote-be-web-hcbvddd8cegng0d0.westeurope-01.azurewebsites.net"
 
   constructor(private httpClient: HttpClient) {}
 
   getAllQuotes(): Observable<Quote[]>{
-      return this.httpClient.get<Quote[]>(this.RECIPE_URL);
+      return this.httpClient.get<Quote[]>(this.QUOTE_URL);
     }
 
   getQuoteById(quoteId: string):Observable<Quote>{
-    return this.httpClient.get<Quote>(`$this.RECIPE_URL/${quoteId}`)
+    return this.httpClient.get<Quote>(`$this.QUOTE_URL/${quoteId}`)
   }  
 
   getRandomQuote():Observable<Quote>{
-    return this.httpClient.get<Quote>(this.RECIPE_URL + '/random');
+    return this.httpClient.get<Quote>(this.QUOTE_URL + '/random');
   }  
    
 }
