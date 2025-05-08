@@ -28,8 +28,11 @@ jobs:
           npm install
           npm run build --if-present
 
-      - name: Zip artifact for deployment
-        run: zip -r release.zip dist/daily-quotes-fe/*
+      - name: Zip Release
+        uses: TheDoctor0/zip-release@0.7.6
+        with:
+          filename: release.zip
+          path: ./frontend/dist/frontend/*
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
