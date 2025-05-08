@@ -28,11 +28,8 @@ jobs:
           npm install
           npm run build --if-present
 
-      - name: Zip Release
-        uses: TheDoctor0/zip-release@0.7.6
-        with:
-          filename: release.zip
-          path: ./daily-quotes-fe/dist/daily-quotes-fe/*
+      - name: Zip artifact for deployment
+        run: zip -r release.zip dist/daily-quotes-fe/*
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -57,7 +54,9 @@ jobs:
           name: node-app
 
       - name: Unzip artifact for deployment
-        run: unzip release.zip
+        run: |
+          unzip release.zip -d deploy
+          cp -r deploy/* .
       
       - name: Login to Azure
         uses: azure/login@v2
