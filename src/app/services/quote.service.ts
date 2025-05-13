@@ -17,11 +17,11 @@ export class QuoteService {
     }
 
   getQuoteById(quoteId: string):Observable<Quote>{
-    return this.httpClient.get<Quote>(`$this.QUOTE_URL/${quoteId}`)
+    return this.httpClient.get<Quote>(`$this.QUOTE_URL/quotes/${quoteId}`)
   }  
 
   getRandomQuote():Observable<Quote>{
-    return this.httpClient.get<Quote>(this.QUOTE_URL + '/random');
+    return this.httpClient.get<Quote>(this.QUOTE_URL + '/quotes/random');
   }  
    
 }
